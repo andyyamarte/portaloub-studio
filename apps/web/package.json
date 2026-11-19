@@ -1,0 +1,26 @@
+{
+  "name": "@portaloub/web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web Next.js — interfaz interactiva del estudio de PortalOub",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@portaloub/contracts": "*",
+    "gsap": "^3.15.1",
+    "lucide-react": "^1.76.0",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "~5.9.3"
+  }
+}

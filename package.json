@@ -1,0 +1,28 @@
+{
+  "name": "portaloub-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio interactivo de PortalOub - Next.js + Nest.js + arquitectura limpia",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "predev": "npm run build --workspace @portaloub/contracts",
+    "dev": "concurrently -k -n api,web -c cyan,magenta \"npm run dev --workspace @portaloub/api\" \"npm run dev --workspace @portaloub/web\"",
+    "prebuild": "npm run build --workspace @portaloub/contracts",
+    "build": "npm run build --workspace @portaloub/api && npm run build --workspace @portaloub/web",
+    "start": "concurrently -k -n api,web -c cyan,magenta \"npm run start --workspace @portaloub/api\" \"npm run start --workspace @portaloub/web\"",
+    "typecheck": "npm run typecheck --workspace @portaloub/contracts && npm run typecheck --workspace @portaloub/api && npm run typecheck --workspace @portaloub/web",
+    "clean": "rimraf apps/api/dist apps/web/.next"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "concurrently": "^10.0.7",
+    "rimraf": "^6.1.0",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
